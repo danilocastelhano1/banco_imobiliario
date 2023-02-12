@@ -1,6 +1,6 @@
 from typing import Dict
 
-from match.properties import CountResult
+from src.match.properties import CountResult
 
 from src.players.enum_player import KindOfPlayer
 

@@ -29,8 +29,8 @@ def generate_properties():
         properties_list.append(
             Property(
                 name=f"property_{i}",
-                sell_cost=randint(30, 120),
-                rent_cost=randint(30, 120),
+                sell_cost=randint(50, 300),
+                rent_cost=randint(50, 150),
                 owner=None
             )
         )
