@@ -10,6 +10,8 @@ from src.settings.aggregate import aggregate
 
 
 def run_and_display_statistics():
+    total_run: int = 300
+
     count_result = CountResult(
         impulsive=0,
         demanding=0,
@@ -19,7 +21,7 @@ def run_and_display_statistics():
         round_total=0,
     )
 
-    for index in range(0, 300):
+    for index in range(0, total_run):
         players = [
             ImpulsivePlayer(),
             DemandingPlayer(),
@@ -36,12 +38,12 @@ def run_and_display_statistics():
 
     print("=" * 150)
     print(f"Total matches ended by timeout {count_result['total_ended_by_timeout']}")
-    print(f"Average round match without Timeout {count_result['round_total'] / 300:.0f}")
+    print(f"Average round match without Timeout {count_result['round_total'] / total_run:.0f}")
     print("-" * 150)
-    print(f"Winner % DEMANDING {(count_result['demanding'] / 300) * 100:.2f}%")
-    print(f"Winner % IMPULSIVE {(count_result['impulsive'] / 300) * 100:.2f}%")
-    print(f"Winner % CAUTIOUS {(count_result['cautious'] / 300) * 100:.2f}%")
-    print(f"Winner % RANDOM {(count_result['random'] / 300) * 100:.2f}%")
+    print(f"Winner % DEMANDING {(count_result['demanding'] / total_run) * 100:.2f}%")
+    print(f"Winner % IMPULSIVE {(count_result['impulsive'] / total_run) * 100:.2f}%")
+    print(f"Winner % CAUTIOUS {(count_result['cautious'] / total_run) * 100:.2f}%")
+    print(f"Winner % RANDOM {(count_result['random'] / total_run) * 100:.2f}%")
     print("-" * 150)
     champion_behavior = [
         count_result['demanding'],
